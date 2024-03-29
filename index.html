@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+      }
+      .botoes {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+      }
+      .botoes > button {
+        position: relative;
+        padding: 10px;
+        background-color: purple;
+        border: none;
+        box-shadow: 1px 1px 15px black;
+        width: 100px;
+        border-radius: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Quer sair comigo ?</h1>
+    <div class="botoes">
+      <button id="buttonHover" onmouseenter="passou()">Sim</button>
+      <button onclick="buxa()">Não</button>
+    </div>
+    <script>
+      var botao = document.getElementById("buttonHover");
+
+      function passou() {
+        let numeroAleatório = Math.random() * 300;
+
+        if (Math.random() < 0.5) {
+          botao.style.top = `${numeroAleatório}px`;
+        } else {
+          botao.style.top = `-${numeroAleatório}px`;
+        }
+
+        if (Math.random() < 0.5) {
+          botao.style.left = `${numeroAleatório}px`;
+        } else {
+          botao.style.left = `-${numeroAleatório}px`;
+        }
+      }
+
+      function buxa() {
+        window.window.location.href = "./jae.html";
+      }
+    </script>
+  </body>
+</html>
